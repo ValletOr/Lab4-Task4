@@ -42,6 +42,12 @@ namespace Lab4_Task4
         private CarType type;
         private int engVol;
         private int dAmount;
+        public Car()
+        {
+            this.type = (CarType)rnd.Next(4);
+            this.engVol = rnd.Next(1, 30);
+            this.nOfWheels = rnd.Next(1, 7);
+        }
     }
     //=========================================================
     public enum EngineType
@@ -54,5 +60,11 @@ namespace Lab4_Task4
     {
         private EngineType type;
         private int maxHeight;
+        public Plane()
+        {
+            this.type = (EngineType)rnd.Next(3);
+            this.maxHeight = rnd.Next(1, 118000);
+            this.nOfWheels = rnd.Next(1, 4);
+        }
     }
 }
