@@ -10,6 +10,11 @@ namespace Lab4_Task4
     {
         protected int nOfWheels = 0;
         protected Random rnd = new Random();
+        public System.Drawing.Bitmap img;
+        public virtual string GetInfo()
+        {
+            return "Транспорт";
+        }
     }
     //========================================================
     public enum BicycleType
@@ -20,14 +25,20 @@ namespace Lab4_Task4
     }
     public class Bicycle : Vehicle
     {
-        public BicycleType type;
+        private BicycleType type;
         public int wRad;
-        public System.Drawing.Bitmap img = Properties.Resources.bicycle;
         public Bicycle()
         {
             this.type = (BicycleType)rnd.Next(3);
             this.wRad = rnd.Next(20, 31);
             this.nOfWheels = rnd.Next(1, 4);
+            img = Properties.Resources.bicycle;
+        }
+        public override string GetInfo()
+        {
+            string outMessage = "";
+            outMessage += string.Format("Велосипед\nТип: {0}\nКол-во колёс: {1}\nРадиус колёс: {2}", this.type, this.nOfWheels, this.wRad);
+            return outMessage;
         }
     }
     //========================================================
@@ -43,12 +54,19 @@ namespace Lab4_Task4
         public CarType type;
         public int engVol;
         public int dAmount;
-        public System.Drawing.Bitmap img = Properties.Resources.car;
         public Car()
         {
             this.type = (CarType)rnd.Next(4);
             this.engVol = rnd.Next(1, 30);
-            this.nOfWheels = rnd.Next(1, 7);
+            this.dAmount = rnd.Next(2, 5);
+            this.nOfWheels = rnd.Next(3, 9);
+            img = Properties.Resources.car;
+        }
+        public override string GetInfo()
+        {
+            string outMessage = "";
+            outMessage += string.Format("Автомобиль\nТип: {0}\nКол-во колёс: {1}\nОбъём двигателя: {2}\nКол-во дверей: {3}", this.type, this.nOfWheels, this.engVol, this.dAmount);
+            return outMessage;
         }
     }
     //=========================================================
@@ -62,12 +80,18 @@ namespace Lab4_Task4
     {
         public EngineType type;
         public int maxHeight;
-        public System.Drawing.Bitmap img = Properties.Resources.plane;
         public Plane()
         {
             this.type = (EngineType)rnd.Next(3);
             this.maxHeight = rnd.Next(1, 118000);
-            this.nOfWheels = rnd.Next(1, 4);
+            this.nOfWheels = rnd.Next(3, 33);
+            img = Properties.Resources.plane;
+        }
+        public override string GetInfo()
+        {
+            string outMessage = "";
+            outMessage += string.Format("Самолёт\nТип двигателя: {0}\nКол-во колёс: {1}\nМакс. высота полёта: {2}", this.type, this.nOfWheels, this.maxHeight);
+            return outMessage;
         }
     }
 }
