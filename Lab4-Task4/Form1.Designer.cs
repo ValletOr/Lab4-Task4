@@ -29,6 +29,7 @@ namespace Lab4_Task4
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.listReCreateBtn = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.cInfBox = new System.Windows.Forms.RichTextBox();
@@ -106,6 +107,7 @@ namespace Lab4_Task4
             this.Controls.Add(this.cInfBox);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.listReCreateBtn);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.Text = "Автомат с талонами на транспорт";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
