@@ -20,8 +20,9 @@ namespace Lab4_Task4
     }
     public class Bicycle : Vehicle
     {
-        private BicycleType type;
-        private int wRad;
+        public BicycleType type;
+        public int wRad;
+        public System.Drawing.Bitmap img = Properties.Resources.bicycle;
         public Bicycle()
         {
             this.type = (BicycleType)rnd.Next(3);
@@ -39,9 +40,10 @@ namespace Lab4_Task4
     }
     public class Car : Vehicle
     {
-        private CarType type;
-        private int engVol;
-        private int dAmount;
+        public CarType type;
+        public int engVol;
+        public int dAmount;
+        public System.Drawing.Bitmap img = Properties.Resources.car;
         public Car()
         {
             this.type = (CarType)rnd.Next(4);
@@ -58,8 +60,9 @@ namespace Lab4_Task4
     }
     public class Plane : Vehicle
     {
-        private EngineType type;
-        private int maxHeight;
+        public EngineType type;
+        public int maxHeight;
+        public System.Drawing.Bitmap img = Properties.Resources.plane;
         public Plane()
         {
             this.type = (EngineType)rnd.Next(3);

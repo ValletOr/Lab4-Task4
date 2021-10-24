@@ -16,5 +16,11 @@ namespace Lab4_Task4
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Bicycle cycle = new Bicycle();
+            pictureBox1.Image = cycle.img;
+        }
     }
 }
