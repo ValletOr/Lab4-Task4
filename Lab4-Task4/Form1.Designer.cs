@@ -36,14 +36,15 @@ namespace Lab4_Task4
             this.getBtn = new System.Windows.Forms.Button();
             this.outBox = new System.Windows.Forms.RichTextBox();
             this.infBtn = new System.Windows.Forms.Button();
+            this.queueBox = new System.Windows.Forms.RichTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // listReCreateBtn
             // 
-            this.listReCreateBtn.Location = new System.Drawing.Point(343, 10);
+            this.listReCreateBtn.Location = new System.Drawing.Point(349, 84);
             this.listReCreateBtn.Name = "listReCreateBtn";
-            this.listReCreateBtn.Size = new System.Drawing.Size(113, 68);
+            this.listReCreateBtn.Size = new System.Drawing.Size(107, 107);
             this.listReCreateBtn.TabIndex = 0;
             this.listReCreateBtn.Text = "Пересоздать список";
             this.listReCreateBtn.UseVisualStyleBackColor = true;
@@ -69,9 +70,9 @@ namespace Lab4_Task4
             // 
             // getBtn
             // 
-            this.getBtn.Location = new System.Drawing.Point(343, 85);
+            this.getBtn.Location = new System.Drawing.Point(462, 211);
             this.getBtn.Name = "getBtn";
-            this.getBtn.Size = new System.Drawing.Size(113, 106);
+            this.getBtn.Size = new System.Drawing.Size(245, 106);
             this.getBtn.TabIndex = 3;
             this.getBtn.Text = "Взять талон";
             this.getBtn.UseVisualStyleBackColor = true;
@@ -88,19 +89,28 @@ namespace Lab4_Task4
             // 
             // infBtn
             // 
-            this.infBtn.Location = new System.Drawing.Point(462, 12);
+            this.infBtn.Location = new System.Drawing.Point(349, 12);
             this.infBtn.Name = "infBtn";
-            this.infBtn.Size = new System.Drawing.Size(107, 179);
+            this.infBtn.Size = new System.Drawing.Size(107, 66);
             this.infBtn.TabIndex = 5;
             this.infBtn.Text = "Описание автомата";
             this.infBtn.UseVisualStyleBackColor = true;
             this.infBtn.Click += new System.EventHandler(this.infBtn_Click);
             // 
+            // queueBox
+            // 
+            this.queueBox.Location = new System.Drawing.Point(462, 10);
+            this.queueBox.Name = "queueBox";
+            this.queueBox.Size = new System.Drawing.Size(245, 181);
+            this.queueBox.TabIndex = 6;
+            this.queueBox.Text = "";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(581, 467);
+            this.ClientSize = new System.Drawing.Size(719, 467);
+            this.Controls.Add(this.queueBox);
             this.Controls.Add(this.infBtn);
             this.Controls.Add(this.outBox);
             this.Controls.Add(this.getBtn);
@@ -123,6 +133,7 @@ namespace Lab4_Task4
         private System.Windows.Forms.Button getBtn;
         private System.Windows.Forms.RichTextBox outBox;
         private System.Windows.Forms.Button infBtn;
+        private System.Windows.Forms.RichTextBox queueBox;
     }
 }
 

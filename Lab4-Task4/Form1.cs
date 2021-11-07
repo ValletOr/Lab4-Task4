@@ -43,29 +43,42 @@ namespace Lab4_Task4
         public void ShowInfo()
         {
             int bCounter = 0, cCounter = 0, pCounter = 0;
-            foreach (Vehicle vehicle in vList)
+            if (vList.Count == 0)
             {
+                queueBox.Text = "Очередь пуста.";
+            }
+            else
+            {
+                queueBox.Text = "Очередь талонов:";
+            }
+            for(int i = 0; i < vList.Count; i++)
+            {
+                Vehicle vehicle = vList[i];
                 if (vehicle is Bicycle)
                 {
                     bCounter++;
+                    queueBox.Text += string.Format($"\n{i+1}) Велосипед");
                 }
                 else if (vehicle is Car)
                 {
                     cCounter++;
+                    queueBox.Text += string.Format($"\n{i+1}) Автомобиль");
                 }
                 else
                 {
                     pCounter++;
+                    queueBox.Text += string.Format($"\n{i+1}) Самолёт");
                 }
             }
             cInfBox.Text = String.Format($"Количество талонов на транспорт в аппарате:\nВелосипед:\tАвтомобиль:\tСамолёт:\n{bCounter, 10}{cCounter, 30}{pCounter, 25}");
+
         }
 
         private void getBtn_Click(object sender, EventArgs e)
         {
             if(vList.Count == 0)
             {
-                outBox.Text = "Автомат пуст";
+                outBox.Text = "Автомат пуст!!!";
                 pictureBox1.Image = default;
             }
             else
@@ -85,7 +98,7 @@ namespace Lab4_Task4
                 "Велосипеды(тип(горный, городской, детский), радиус колес)\n" +
                 "Автомобили(тип(автобус, грузовик, внедорожник, легковая), объем двигателя, количество дверей),\n" +
                 "Самолеты(тип двигателя, максимальная высота полета)"
-                );
+                ,"Описание автомата");
         }
     }
 }
